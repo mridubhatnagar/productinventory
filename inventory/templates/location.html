@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block content %}
+<h3>Product Location</h3>
+	<a href="/add_location" class="btn btn-primary" role="button">Add Location</a>
+	<hr>     
+	<table class="table table-striped">
+	    <thead>
+	      <tr>
+	        <th>Location ID</th>
+	        <th>Location Name</th>
+	        <th></th>
+	      </tr>
+	    </thead>
+	    <tbody>
+	    	{% for location in locations %}
+	      	<tr>
+	        	<td>{{location.id}}</td>
+	        	<td>{{location.name}}</td>
+	        	<td><a href="edit_location/{{location.id}}" class="btn btn-primary pull-right">Edit</a></td>
+	        	<td></td>
+	      	</tr>
+	      	{% endfor %}
+	    </tbody>
+	</table>
+{% endblock content %}

@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+{% block content %}
+<h3>Product Movement</h3>
+	<a href="/add_productmovement" class="btn btn-primary" role="button">Add Product Movement</a>
+	<hr>     
+	<table class="table table-striped">
+	    <thead>
+	      <tr>
+	      	<th>Movement ID</th>
+	        <th>Product ID</th>
+	        <th>From Location ID</th> 
+	        <th>To Location ID</th>
+	        <th>Quantity</th>
+	      </tr>
+	    </thead>
+	    <tbody>
+	    	{% for product_movement in product_movements %}
+	      <tr>
+	      	<td>{{product_movement.id}}</td>
+	        <td>{{product_movement.product.name}}</td>
+	        <td>{{product_movement.from_location.name}}</td>
+	        <td>{{product_movement.to_location.name}}</td>
+	        <td>{{product_movement.quantity}}</td>
+	        <td><a href="edit_productmovement/{{product_movement.id}}" class="btn btn-primary pull-right">Edit</a></td>
+	      </tr>
+	       {% endfor %}
+	    </tbody>
+	</table>
+    </hr>
+{% endblock content %}

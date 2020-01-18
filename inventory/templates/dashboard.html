@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block content %}
+<h3>Product Balance</h3>
+	<hr>     
+	<table class="table table-striped">
+	    <thead>
+	      <tr>
+	      	<th>Product</th>
+	        <th>Warehouse</th>
+	        <th>Quantity</th>
+	      </tr>
+	    </thead>
+	    <tbody>
+	    	{% for product_detail in product_details %}
+	    		{% for product in product_details[product_detail] %}
+	    			<tr>
+	      				<td>{{product}}</td>
+	        			<td>{{product_detail}}</td>
+	        			<td>{{product_details[product_detail][product]}}</td>
+	        		</tr>
+	      		{% endfor %}
+	       {% endfor %}
+	    </tbody>
+	</table>
+    </hr>
+{% endblock content %}

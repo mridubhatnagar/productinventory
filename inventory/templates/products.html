@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% block content %}
+	<h3>Product</h3>
+	<a href="/add_product" class="btn btn-primary" role="button">Add Product</a>
+	<hr>     
+	<table class="table table-striped">
+	    <thead>
+	      <tr>
+	      	<th>Product ID</th>
+	        <th>Product Name</th>
+	        <th></th>
+	        <th></th>
+	      </tr>
+	    </thead>
+	    <tbody>
+	    	{% for product in products %}
+	      	<tr>
+	      		<td>{{product.id}}</td>
+	        	<td>{{product.name}}</td>
+	        	<td><a href="edit_product/{{product.id}}" class="btn btn-primary pull-right">Edit</a></td></td>
+	        	<td></td>
+	      	</tr>
+	      	{% endfor %}
+	    </tbody>
+	</table>
+    </hr>
+
+{% endblock content %}

@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="content-section">
+		<form method="POST", action="">
+			{{form.hidden_tag()}}
+			<fieldset class="form-group">
+				<legend class="border-bottom mb-4">Location Details</legend>
+				<div class="form-group">
+					{{form.name.label(class="form-control-label")}}
+					{{form.name(class="form-control form-control-sm")}}
+				</div>
+			</fieldset>
+			<div class="form-group">
+				<input type="submit" class="btn btn-info" value="Add Location">
+			</div>
+		</form>
+</div>
+{% endblock content %}
