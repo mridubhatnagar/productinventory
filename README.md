@@ -7,7 +7,10 @@ Steps to run the web application on your local machine.
 ```
 git clone https://github.com/mridubhatnagar/Product_Inventory.git
 ```
-2. cd Product_Inventory
+2. Change directory
+```
+cd Product_Inventory
+```
 3. Create virtual environment. 
 ```
 virtualenv venv
