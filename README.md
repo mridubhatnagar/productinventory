@@ -20,7 +20,14 @@ source venv/bin/activate
 ```
 pip install -r requirements.txt
 ```
-5. Run flask application 
+5. Create Database. Open python interpreter. Create DB.
+```
+python
+from inventory import db
+db.create_all()
+```
+
+6. Run flask application 
 ```
 export FLASK_APP=inventory.py
 flask run
